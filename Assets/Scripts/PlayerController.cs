@@ -9,14 +9,12 @@ public class PlayerController : MonoBehaviour
     public float speed = 800.0f;
     public Text scoreText;
     public Text winText;
-    public Text colorText;
     public Material PlayerColor;
     Vector3 vec = new Vector3(3f, 3f, 3f);
     private int count = 0;
 
-    void Awake()
+    void Start()
     {
-        colorText.text = "Selected Color: " + PickColor.playerColor;
         ChangePlayerColor();
 
         if (ChangeSpeed.gameSpeed > 0f) {
@@ -49,13 +47,13 @@ public class PlayerController : MonoBehaviour
         switch (PickColor.playerColor)
         {
             case 1:
-                PlayerColor.color = Color.red;
+                PlayerColor.color = new Color32(255, 10, 60, 255);
                 break;
             case 2:
-                PlayerColor.color = Color.green;
+                PlayerColor.color = new Color32(10, 200, 100, 255);
                 break;
             case 3:
-                PlayerColor.color = Color.blue;
+                PlayerColor.color = new Color32(18, 38, 240, 255);
                 break;
             default:
                 PlayerColor.color = Color.red;
